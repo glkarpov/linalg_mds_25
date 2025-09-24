@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: _site
+  resources: 
+    - "*.mp4"
+    - "*.txt"
+    - "*.csv"
+
+lang: ru
+
+execute:
+  freeze: auto
+
+filters:
+  - course
+
+website:
+  navbar:
+    left: 
+        - program.md
+    title: false
+  repo-url: https://github.com/glkarpov/linalg_mds_25
+  repo-branch: main
+  repo-actions: [edit]
+  search: 
+    location: navbar
+    type: textbox
+  twitter-card: true
+  open-graph: true
+  favicon: favicon.svg

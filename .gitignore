@@ -1,0 +1,15 @@
+_site/
+.DS_Store
+*.DS_Store
+**/.DS_store
+/.luarc.json
+
+/.quarto/
+/.pdfsync/
+/.fls/
+/.flsa/
+
+# Ignore all .aux and .log files
+*.aux
+*.log
+*.out
