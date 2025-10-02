@@ -7,10 +7,10 @@ listing:
     template: team_listing_template.ejs
 ---
 
-# Линейная алгебра
+# Linear algebra
 
-* Курс для студентов онлайн-программы "Магистр по наукам о данных", реализуемой на ФКН ВШЭ.
-* Курс является адаптационным и ставит целью как знакомство слушателей с основными фундаментальными темами линейной алгебры: векторные пространства, базисы, линейные отображения - так и показать появление этих концепций в прикладном применении линейной алгебры в науке о данных и машинном обучении.
+* Course for students of the online "Master of Data Science" program, implemented at the Faculty of Computer Science, HSE University.
+* The course is adaptive and aims both to introduce students to the fundamental topics of linear algebra: vector spaces, bases, linear mappings - and to demonstrate the emergence of these concepts in the practical application of linear algebra in data science and machine learning.
 
 # Team
 :::{#team}
