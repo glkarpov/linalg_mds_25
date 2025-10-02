@@ -188,7 +188,7 @@ window.Quarto = {
 
     <h3 class="anchored">Занятие 1</h3>
     <p>
-        <a href="./lectures/lecture_1.pdf">📄 Презентация</a> • <a href="./notes/1.pdf">📝 Заметки</a>
+        <a href="./lectures/lecture_1.pdf">📄 Презентация</a> • <a href="./notes/lecture_1_notes.pdf">📝 Заметки</a>
     </p>
     <p>
         Векторы и матрицы. Основные операции.
@@ -273,7 +273,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/glkarpov\.github\.io\/linalg_mds_25\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
