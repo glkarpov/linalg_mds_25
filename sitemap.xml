@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://glkarpov.github.io/linalg_mds_25/program.html</loc>
-    <lastmod>2025-10-02T11:23:55.857Z</lastmod>
+    <loc>https://glkarpov.github.io/linalg_mds_25/lectures/norms.html</loc>
+    <lastmod>2025-10-02T11:52:57.973Z</lastmod>
   </url>
   <url>
     <loc>https://glkarpov.github.io/linalg_mds_25/index.html</loc>
-    <lastmod>2025-10-02T11:23:55.854Z</lastmod>
+    <lastmod>2025-10-02T11:41:40.579Z</lastmod>
+  </url>
+  <url>
+    <loc>https://glkarpov.github.io/linalg_mds_25/program.html</loc>
+    <lastmod>2025-10-02T11:00:48.048Z</lastmod>
+  </url>
+  <url>
+    <loc>https://glkarpov.github.io/linalg_mds_25/lectures/lecture_2.html</loc>
+    <lastmod>2025-09-25T15:26:00.167Z</lastmod>
   </url>
 </urlset>
