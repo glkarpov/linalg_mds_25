@@ -1,80 +1,10 @@
 [
   {
-    "objectID": "lectures/norms.html",
-    "href": "lectures/norms.html",
-    "title": "",
+    "objectID": "program.html",
+    "href": "program.html",
+    "title": "📜 Materials",
     "section": "",
-    "text": "Норма - это количественная мера малости вектора и обычно обозначается как \\(\\Vert x \\Vert\\).\nНорма должна удовлетворять определенным свойствам:\n\n\\(\\Vert \\alpha x \\Vert = \\vert \\alpha\\vert \\Vert x \\Vert\\), \\(\\alpha \\in \\mathbb{R}\\)\n\\(\\Vert x + y \\Vert \\leq \\Vert x \\Vert + \\Vert y \\Vert\\) (неравенство треугольника)\nЕсли \\(\\Vert x \\Vert = 0\\), то \\(x = 0\\)\n\n. . .\nРасстояние между двумя векторами определяется как \\[\nd(x, y) = \\Vert x - y \\Vert.\n\\] Наиболее широко используемой нормой является Евклидова норма: \\[\n\\Vert x \\Vert_2 = \\sqrt{\\sum_{i=1}^n |x_i|^2},\n\\] которая соответствует расстоянию в нашей реальной жизни. Если векторы имеют комплексные элементы, мы используем их модуль. Евклидова норма, или \\(2\\)-норма, является подклассом важного класса \\(p\\)-норм:\n\\[\n\\Vert x \\Vert_p = \\Big(\\sum_{i=1}^n |x_i|^p\\Big)^{1/p}.\n\\]"
-  },
-  {
-    "objectID": "lectures/norms.html#нормы",
-    "href": "lectures/norms.html#нормы",
-    "title": "",
-    "section": "",
-    "text": "Норма - это количественная мера малости вектора и обычно обозначается как \\(\\Vert x \\Vert\\).\nНорма должна удовлетворять определенным свойствам:\n\n\\(\\Vert \\alpha x \\Vert = \\vert \\alpha\\vert \\Vert x \\Vert\\), \\(\\alpha \\in \\mathbb{R}\\)\n\\(\\Vert x + y \\Vert \\leq \\Vert x \\Vert + \\Vert y \\Vert\\) (неравенство треугольника)\nЕсли \\(\\Vert x \\Vert = 0\\), то \\(x = 0\\)\n\n. . .\nРасстояние между двумя векторами определяется как \\[\nd(x, y) = \\Vert x - y \\Vert.\n\\] Наиболее широко используемой нормой является Евклидова норма: \\[\n\\Vert x \\Vert_2 = \\sqrt{\\sum_{i=1}^n |x_i|^2},\n\\] которая соответствует расстоянию в нашей реальной жизни. Если векторы имеют комплексные элементы, мы используем их модуль. Евклидова норма, или \\(2\\)-норма, является подклассом важного класса \\(p\\)-норм:\n\\[\n\\Vert x \\Vert_p = \\Big(\\sum_{i=1}^n |x_i|^p\\Big)^{1/p}.\n\\]"
-  },
-  {
-    "objectID": "lectures/norms.html#p-норма-вектора",
-    "href": "lectures/norms.html#p-норма-вектора",
-    "title": "",
-    "section": "\\(p\\)-норма вектора",
-    "text": "\\(p\\)-норма вектора\nСуществуют два очень важных частных случая. Бесконечность-норма, или норма Чебышева, определяется как максимальное абсолютное значение элемента вектора: \\[\n\\Vert x \\Vert_{\\infty} = \\max_i | x_i|\n\\]\n. . .\n\\(l_1\\) норма (или манхэттенское расстояние) определяется как сумма модулей элементов вектора \\(x\\):\n\\[\n\\Vert x \\Vert_1 = \\sum_i |x_i|\n\\]"
-  },
-  {
-    "objectID": "lectures/norms.html#скалярное-произведение",
-    "href": "lectures/norms.html#скалярное-произведение",
-    "title": "",
-    "section": "Скалярное произведение",
-    "text": "Скалярное произведение\n\nОпределение\n\n\n\n\n\n\nDefinition\n\n\n\n\n\nСкалярное произведение двух векторов \\(\\mathbf{u}, \\mathbf{v} \\in \\mathbb{R}^n\\) — это число, вычисляемое по формуле:\n\\[\\mathbf{u} \\cdot \\mathbf{v} = \\sum_{i=1}^{n} u_i v_i = u_1 v_1 + u_2 v_2 + \\cdots + u_n v_n\\]\n\n\n\n\nГеометрический смысл: \\[\\mathbf{u} \\cdot \\mathbf{v} = |\\mathbf{u}| \\cdot |\\mathbf{v}| \\cdot \\cos \\theta\\]\nгде \\(\\theta\\) — угол между векторами \\(\\mathbf{u}\\) и \\(\\mathbf{v}\\)."
-  },
-  {
-    "objectID": "lectures/norms.html#обозначения-скалярного-произведения",
-    "href": "lectures/norms.html#обозначения-скалярного-произведения",
-    "title": "",
-    "section": "Обозначения скалярного произведения",
-    "text": "Обозначения скалярного произведения\n\nРазличные способы записи\n\n\n\n\n1. Через транспонирование\n\\[\\mathbf{u}^T \\mathbf{v}\\]\nМатричная форма: \\[\\mathbf{u}^T \\mathbf{v} = \\begin{bmatrix} u_1 & u_2 & \\cdots & u_n \\end{bmatrix} \\begin{bmatrix} v_1 \\\\ v_2 \\\\ \\vdots \\\\ v_n \\end{bmatrix}\\]\nРезультат: \\[= u_1 v_1 + u_2 v_2 + \\cdots + u_n v_n\\]\n\n\n\n2. Через угловые скобки\n\\[\\langle \\mathbf{u}, \\mathbf{v} \\rangle\\]\nАльтернативно: - \\(\\mathbf{u} \\cdot \\mathbf{v}\\) — точечное произведение\nОбозначения эквивалентны: \\[\\mathbf{u}^T \\mathbf{v} = \\langle \\mathbf{u}, \\mathbf{v} \\rangle = \\mathbf{u} \\cdot \\mathbf{v}\\]"
-  },
-  {
-    "objectID": "lectures/norms.html#основные-свойства-скалярного-произведения",
-    "href": "lectures/norms.html#основные-свойства-скалярного-произведения",
-    "title": "",
-    "section": "Основные свойства скалярного произведения",
-    "text": "Основные свойства скалярного произведения\n\nАлгебраические свойства\n\nКоммутативность: \\[\\langle \\mathbf{u}, \\mathbf{v} \\rangle = \\langle \\mathbf{v}, \\mathbf{u} \\rangle\\]\nЛинейность по первому аргументу: \\[\\langle \\alpha \\mathbf{u} + \\beta \\mathbf{w}, \\mathbf{v} \\rangle = \\alpha \\langle \\mathbf{u}, \\mathbf{v} \\rangle + \\beta \\langle \\mathbf{w}, \\mathbf{v} \\rangle\\]\n\n\n\nГеометрические свойства\n\nСвязь с длиной вектора: \\[|\\mathbf{u}| = \\sqrt{\\langle \\mathbf{u}, \\mathbf{u} \\rangle} = \\sqrt{\\mathbf{u}^T \\mathbf{u}}\\]\nОртогональность: \\[\\mathbf{u} \\perp \\mathbf{v} \\Leftrightarrow \\langle \\mathbf{u}, \\mathbf{v} \\rangle = 0\\]"
-  },
-  {
-    "objectID": "lectures/norms.html#norms",
-    "href": "lectures/norms.html#norms",
-    "title": "",
-    "section": "Norms",
-    "text": "Norms\nA norm is a quantitative measure of the magnitude of a vector and is usually denoted as \\(\\Vert x \\Vert\\).\nA norm must satisfy certain properties:\n\n\\(\\Vert \\alpha x \\Vert = \\vert \\alpha\\vert \\Vert x \\Vert\\), \\(\\alpha \\in \\mathbb{R}\\)\n\\(\\Vert x + y \\Vert \\leq \\Vert x \\Vert + \\Vert y \\Vert\\) (triangle inequality)\nIf \\(\\Vert x \\Vert = 0\\), then \\(x = 0\\)\n\n. . .\nThe distance between two vectors is defined as \\[\nd(x, y) = \\Vert x - y \\Vert.\n\\] The most widely used norm is the Euclidean norm: \\[\n\\Vert x \\Vert_2 = \\sqrt{\\sum_{i=1}^n |x_i|^2},\n\\] which corresponds to distance in our real life. If vectors have complex elements, we use their modulus. The Euclidean norm, or \\(2\\)-norm, is a subclass of the important class of \\(p\\)-norms:\n\\[\n\\Vert x \\Vert_p = \\Big(\\sum_{i=1}^n |x_i|^p\\Big)^{1/p}.\n\\]"
-  },
-  {
-    "objectID": "lectures/norms.html#p-norm-of-a-vector",
-    "href": "lectures/norms.html#p-norm-of-a-vector",
-    "title": "",
-    "section": "\\(p\\)-norm of a vector",
-    "text": "\\(p\\)-norm of a vector\nThere are two very important special cases. The infinity norm, or Chebyshev norm, is defined as the maximum absolute value of vector elements: \\[\n\\Vert x \\Vert_{\\infty} = \\max_i | x_i|\n\\]\n. . .\nThe \\(l_1\\) norm (or Manhattan distance) is defined as the sum of absolute values of vector elements \\(x\\):\n\\[\n\\Vert x \\Vert_1 = \\sum_i |x_i|\n\\]"
-  },
-  {
-    "objectID": "lectures/norms.html#dot-product",
-    "href": "lectures/norms.html#dot-product",
-    "title": "",
-    "section": "Dot product",
-    "text": "Dot product\n\nDefinition\n\n\n\n\n\n\nDefinition\n\n\n\n\n\nThe dot product of two vectors \\(\\mathbf{u}, \\mathbf{v} \\in \\mathbb{R}^n\\) is a number computed by the formula:\n\\[\\mathbf{u} \\cdot \\mathbf{v} = \\sum_{i=1}^{n} u_i v_i = u_1 v_1 + u_2 v_2 + \\cdots + u_n v_n\\]\n\n\n\n\nGeometric meaning: \\[\\mathbf{u} \\cdot \\mathbf{v} = |\\mathbf{u}| \\cdot |\\mathbf{v}| \\cdot \\cos \\theta\\]\nwhere \\(\\theta\\) is the angle between vectors \\(\\mathbf{u}\\) and \\(\\mathbf{v}\\)."
-  },
-  {
-    "objectID": "lectures/norms.html#dot-product-notation",
-    "href": "lectures/norms.html#dot-product-notation",
-    "title": "",
-    "section": "Dot product notation",
-    "text": "Dot product notation\n\nDifferent ways of writing\n\n\n\n\n1. Through transpose\n\\[\\mathbf{u}^T \\mathbf{v}\\]\nMatrix form: \\[\\mathbf{u}^T \\mathbf{v} = \\begin{bmatrix} u_1 & u_2 & \\cdots & u_n \\end{bmatrix} \\begin{bmatrix} v_1 \\\\ v_2 \\\\ \\vdots \\\\ v_n \\end{bmatrix}\\]\nResult: \\[= u_1 v_1 + u_2 v_2 + \\cdots + u_n v_n\\]\n\n\n\n2. Through angle brackets\n\\[\\langle \\mathbf{u}, \\mathbf{v} \\rangle\\]\nAlternative notation: - \\(\\mathbf{u} \\cdot \\mathbf{v}\\) — dot product\nNotations are equivalent: \\[\\mathbf{u}^T \\mathbf{v} = \\langle \\mathbf{u}, \\mathbf{v} \\rangle  = \\mathbf{u} \\cdot \\mathbf{v}\\]"
-  },
-  {
-    "objectID": "lectures/norms.html#basic-properties-of-dot-product",
-    "href": "lectures/norms.html#basic-properties-of-dot-product",
-    "title": "",
-    "section": "Basic properties of dot product",
-    "text": "Basic properties of dot product\n\nAlgebraic properties\n\nCommutativity: \\[\\langle \\mathbf{u}, \\mathbf{v} \\rangle = \\langle \\mathbf{v}, \\mathbf{u} \\rangle\\]\nLinearity in the first argument: \\[\\langle \\alpha \\mathbf{u} + \\beta \\mathbf{w}, \\mathbf{v} \\rangle = \\alpha \\langle \\mathbf{u}, \\mathbf{v} \\rangle + \\beta \\langle \\mathbf{w}, \\mathbf{v} \\rangle\\]\n\n\n\nGeometric properties\n\nConnection with vector length: \\[|\\mathbf{u}| = \\sqrt{\\langle \\mathbf{u}, \\mathbf{u} \\rangle} = \\sqrt{\\mathbf{u}^T \\mathbf{u}}\\]\nOrthogonality: \\[\\mathbf{u} \\perp \\mathbf{v} \\Leftrightarrow \\langle \\mathbf{u}, \\mathbf{v} \\rangle = 0\\]"
+    "text": "Занятие 1\n    \n        📄 Презентация • 📄 Presentation • 📝 Заметки\n    \n    \n        Matrices and vectors. Basic operations.\n    \n\n    Занятие 2\n    \n        📄 Презентация\n    \n    \n        Vectors and vector spaces. Linear combination and span. Dependence and independence of vectors.\n    \n\nНет подходящих элементов"
   },
   {
     "objectID": "index.html",
@@ -82,12 +12,5 @@
     "title": "Main",
     "section": "",
     "text": "Linear algebra\n\nCourse for students of the online “Master of Data Science” program, implemented at the Faculty of Computer Science, HSE University.\nThe course is adaptive and aims both to introduce students to the fundamental topics of linear algebra: vector spaces, bases, linear mappings - and to demonstrate the emergence of these concepts in the practical application of linear algebra in data science and machine learning.\n\n\n\nTeam\n\n\n    \n        \n            \n                \n                  \n                    \n                  \n                  \n                    \n                      Глеб Карпов\n                    \n                    Лектор\n                  \n                \n              \n        \n    \n\nНет подходящих элементов"
-  },
-  {
-    "objectID": "program.html",
-    "href": "program.html",
-    "title": "📜 Materials",
-    "section": "",
-    "text": "Занятие 1\n    \n        📄 Презентация • 📄 Presentation • 📝 Заметки\n    \n    \n        Matrices and vectors. Basic operations.\n    \n\nНет подходящих элементов"
   }
 ]
