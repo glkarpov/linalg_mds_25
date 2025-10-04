@@ -3,3 +3,7 @@
   materials: /lectures/lecture_1.pdf
   materials_en: /lectures/lecture_1_en.pdf
   notes: /notes/lecture_1_notes.pdf
+
+- title: Vectors and vector spaces. Linear combination and span. Dependence and independence of vectors.
+  number: 2
+  materials: /lectures/lecture_2.pdf
