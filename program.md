@@ -1,5 +1,5 @@
 ---
-title: 🚀 Материалы
+title: 📜 Materials
 nav_order: 2
 listing:
   - id: materials
@@ -10,4 +10,4 @@ listing:
 ---
 
 :::{#materials}
-::: 
+:::
