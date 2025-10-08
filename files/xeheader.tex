@@ -73,6 +73,12 @@
 \newcommand{\la}{\langle}
 \newcommand{\ra}{\rangle}
 
+% Vector commands for pmatrix
+\newcommand{\vtwo}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
+\newcommand{\vthree}[3]{\begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}}
+\newcommand{\vfour}[4]{\begin{pmatrix} #1 \\ #2 \\ #3 \\ #4 \end{pmatrix}}
+\newcommand{\vn}[2]{\begin{pmatrix} #1 \\ \vdots \\ #2 \end{pmatrix}}
+
 %%% === BACKGROUND IMAGE SETUP
 \AtBeginDocument{
   \ifthenelse{\isundefined{\bgimage}}{

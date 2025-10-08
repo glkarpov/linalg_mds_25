@@ -7,3 +7,9 @@
 - title: Vectors and vector spaces. Linear combination and span. Dependence and independence of vectors.
   number: 2
   materials: /lectures/lecture_2.pdf
+
+- title: Basis of a vector space. Examples.
+  number: 3
+  materials: /lectures/lecture_3.pdf
+  notes_1class: /notes/lecture_3_notes_1class.pdf
+  notes_2class: /notes/lecture_3_notes_2class.pdf
