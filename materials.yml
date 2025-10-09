@@ -1,15 +1,22 @@
 - title: Matrices and vectors. Basic operations.
   number: 1
-  materials: /lectures/lecture_1.pdf
-  materials_en: /lectures/lecture_1_en.pdf
+  lectures: /lectures/lecture_1.pdf
+  lectures_en: /lectures/lecture_1_en.pdf
   notes: /notes/lecture_1_notes.pdf
 
 - title: Vectors and vector spaces. Linear combination and span. Dependence and independence of vectors.
   number: 2
-  materials: /lectures/lecture_2.pdf
+  lectures: /lectures/lecture_2.pdf
 
 - title: Basis of a vector space. Examples.
   number: 3
-  materials: /lectures/lecture_3.pdf
+  lectures: /lectures/lecture_3.pdf
   notes_1class: /notes/lecture_3_notes_1class.pdf
   notes_2class: /notes/lecture_3_notes_2class.pdf
+
+- title: Linear transformations. Matrix representation.
+  number: 4
+  lectures: /lectures/lecture_4.pdf
+  notes_1class: /notes/notes_4_class1.pdf
+  notes_2class: /notes/notes_4_class2.pdf
+  mind_map: materials/ltm_mind_map_v0.9.0.pdf
