@@ -26,3 +26,14 @@
   lectures: /lectures/lecture_5.pdf
   notes_1class: /notes/notes_5_class1.pdf
   notes_2class: /notes/notes_5_class2.pdf
+
+- title: Concept of a matrix inverse. Application for a change of basis.
+  number: 6
+  notes_1class: /notes/notes_6_class1.pdf
+  notes_2class: /notes/notes_6_class2.pdf
+
+- title: Change of a linear transformation matrix when changing bases.
+  number: 7
+  lectures: /lectures/lecture_7.pdf
+  notes_1class: /notes/notes_7_class1.pdf
+  notes_2class: /notes/notes_7_class2.pdf
