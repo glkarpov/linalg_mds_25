@@ -37,3 +37,9 @@
   lectures: /lectures/lecture_7.pdf
   notes_1class: /notes/notes_7_class1.pdf
   notes_2class: /notes/notes_7_class2.pdf
+
+- title: System of linear equations. Gaussian elimination. Reduced row echelon form.
+  number: 8
+  lectures: /lectures/lecture_8.pdf
+  notes_1class: /notes/notes_8_class1.pdf
+  notes_2class: /notes/notes_8_class2.pdf
