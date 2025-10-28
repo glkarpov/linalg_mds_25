@@ -1,4 +1,5 @@
 _site/
+internal/
 .DS_Store
 *.DS_Store
 **/.DS_store
