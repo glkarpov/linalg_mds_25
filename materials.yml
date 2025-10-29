@@ -44,7 +44,7 @@
   notes_1class: /notes/notes_8_class1.pdf
   notes_2class: /notes/notes_8_class2.pdf
 
-- title: Inner product spaces.
+- title: Inner product spaces. Normed spaces. Vector norms.
   number: 9
   lectures: /lectures/lecture_9.pdf
   notes_1class: /notes/notes_9_g1.pdf
@@ -62,7 +62,11 @@
   notes_2class: /notes/notes_11_g2.pdf
   assignments: /assignments/ha_3.pdf
 
-- title: Additional class. Problems on change of coordinates.
+- title: Orthogonal basis. Orthogonalization of a basis.
   number: 12
+  notes_1class: /notes/notes_12_g1.pdf
+  notes_2class: /notes/notes_12_g2.pdf
+
+- title: Additional class. Problems on change of coordinates.
   notes: /notes/notes_cons_1.pdf
   assignments: /assignments/ha_2.pdf
