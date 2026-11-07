@@ -85,9 +85,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title','listing-number','listing-slides_ru',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-title","listing-number","listing-slides_ru"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -168,6 +168,12 @@ window.Quarto = {
 <section id="lectures" class="level2">
 <h2 class="anchored" data-anchor-id="lectures">Lectures</h2>
 <div id="listing-materials" class="quarto-listing quarto-listing-container-custom">
+
+    <h3 class="anchored">Lecture 1</h3>
+    <p>
+        <a href="./lectures/lecture_1_ru.pdf">📄 Slides (RU)</a>
+    </p>
+    <p>Matrices and vectors. Basic operations.</p>
 
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
