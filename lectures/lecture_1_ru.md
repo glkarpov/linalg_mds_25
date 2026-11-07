@@ -1,8 +1,8 @@
 ---
-title: "Linear Algebra"
-subtitle: "Matrices and Vectors. First Introduction, Basic Operations."
-institute: "MDS FCS HSE"
-author: "Gleb Karpov"
+title: "Линейная алгебра"
+subtitle: "Матрицы и векторы. Первичное знакомство, основные операции."
+institute: "Прикладные нейросетевые технологии, ФКН ВШЭ"
+author: "Глеб Карпов"
 format: 
     beamer:
         pdf-engine: xelatex
@@ -11,13 +11,13 @@ format:
         theme: Singapore
         fonmttheme: serif
         section-titles: true
-        incremental: true
+        incremental: false
         include-in-header: ../files/xeheader.tex  # Custom LaTeX commands and preamble
 ---
-## Matrix
+## Матрица
 
 - :::{.callout-definition}
-A **matrix** is an ordered array of numbers arranged in $n$ rows and $m$ columns. 
+Матрица — упорядоченный массив чисел в виде $n$ строк и $m$ столбцов. 
 $$
 A_{n \times m} = \begin{bmatrix}
 a_{11} & a_{12} & \cdots & a_{1m} \\
@@ -28,32 +28,32 @@ a_{n1} & a_{n2} & \cdots & a_{nm}
 $$
 :::
 
-- We usually denote it as $A_{n \times m}$ or, to emphasize the nature of numbers in the matrix, we write $A \in \mathbb{R}^{n \times m}$.
+- Обычно обозначаем как $A_{n \times m}$ или, чтобы подчеркнуть природу чисел в матрице, пишем $A \in \mathbb{R}^{n \times m}$.
 
-- If $n = m$, the matrix is called *square*; if $n \neq m$, it's called *rectangular*
+- Если $n = m$, то матрицу называют *квадратной*, если $n \neq m$ — *прямоугольной*
 
-## Basic operations: transpose
+## Основные операции: транспонирование
 
 :::{.callout-definition}
-**Transpose** of a matrix is an operation where rows and columns are swapped.
-If $A \in \mathbb{R}^{n \times m}$, then $B = A^T \in \mathbb{R}^{m \times n}$, where $b_{ij} = a_{ji}$
+**Транспонирование** матрицы — это операция, при которой строки и столбцы меняются местами.
+Если $A \in \mathbb{R}^{n \times m}$, то $B = A^T$,  $B \in \mathbb{R}^{m \times n}$, где $b_{ij} = a_{ji}$
 :::
 
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
     % Original matrix A
-    \draw[thick] (-2.2, 1.6) -- (-2.4, 1.6) -- (-2.4, -0.6) -- (-2.2, -0.6);
-    \draw[thick] (0.6, 1.6) -- (0.8, 1.6) -- (0.8, -0.6) -- (0.6, -0.6);
+    \draw[thick] (-2.2, 1.6) -- (-2.4, 1.6) -- (-2.4, -0.4) -- (-2.2, -0.4);
+    \draw[thick] (0.6, 1.6) -- (0.8, 1.6) -- (0.8, -0.4) -- (0.6, -0.4);
     
     % Matrix A elements with colors (increased spacing)
     \node[fill=red!20, minimum width=0.6cm, minimum height=0.4cm] at (-1.8, 1.2) {$a_{11}$};
-    \node[fill=blue!20, minimum width=0.6cm, minimum height=0.4cm] at (-1.1, 1.2) {$a_{12}$};
-    \node[fill=green!20, minimum width=0.6cm, minimum height=0.4cm] at (-0.4, 1.2) {$a_{13}$};
+    \node[fill=blue!20, minimum width=0.6cm, minimum height=0.4cm] at (-0.9, 1.2) {$a_{12}$};
+    \node[fill=green!20, minimum width=0.6cm, minimum height=0.4cm] at (0.0, 1.2) {$a_{13}$};
     
     \node[fill=red!40, minimum width=0.6cm, minimum height=0.4cm] at (-1.8, 0.4) {$a_{21}$};
-    \node[fill=blue!40, minimum width=0.6cm, minimum height=0.4cm] at (-1.1, 0.4) {$a_{22}$};
-    \node[fill=green!40, minimum width=0.6cm, minimum height=0.4cm] at (-0.4, 0.4) {$a_{23}$};
+    \node[fill=blue!40, minimum width=0.6cm, minimum height=0.4cm] at (-0.9, 0.4) {$a_{22}$};
+    \node[fill=green!40, minimum width=0.6cm, minimum height=0.4cm] at (0.0, 0.4) {$a_{23}$};
     
     \node at (-1.1, -1.1) {$A_{2 \times 3}$};
     
@@ -61,9 +61,9 @@ If $A \in \mathbb{R}^{n \times m}$, then $B = A^T \in \mathbb{R}^{m \times n}$, 
     \draw[->, thick] (1.3, 0.5) -- (2.3, 0.5);
     \node[above] at (1.8, 0.8) {$A^T$};
     
-    % Transposed matrix A^T (fixed brackets and spacing)
-    \draw[thick] (2.7, 1.9) -- (2.5, 1.9) -- (2.5, -0.9) -- (2.7, -0.9);
-    \draw[thick] (4.3, 1.9) -- (4.5, 1.9) -- (4.5, -0.9) -- (4.3, -0.9);
+    % Transposed matrix A^T 
+    \draw[thick] (2.7, 1.9) -- (2.5, 1.9) -- (2.5, -0.7) -- (2.7, -0.7);
+    \draw[thick] (4.3, 1.9) -- (4.5, 1.9) -- (4.5, -0.7) -- (4.3, -0.7);
     
     % Matrix A^T elements with matching colors (increased spacing)
     \node[fill=red!20, minimum width=0.6cm, minimum height=0.4cm] at (3.1, 1.5) {$a_{11}$};
@@ -77,17 +77,49 @@ If $A \in \mathbb{R}^{n \times m}$, then $B = A^T \in \mathbb{R}^{m \times n}$, 
     
     \node at (3.5, -1.3) {$B_{3 \times 2} = A^T$};
     
+    % === C 3x3 -> D = C^T ===
+    % Matrix C (3 x 3)
+    \draw[thick] (5.9, 1.6) -- (5.7, 1.6) -- (5.7, -0.6) -- (5.9, -0.6);
+    \draw[thick] (9.1, 1.6) -- (9.3, 1.6) -- (9.3, -0.6) -- (9.1, -0.6);
+    \node[fill=red!20, minimum width=0.6cm, minimum height=0.4cm] at (6.5, 1.2) {$c_{11}$};
+    \node[fill=blue!20, minimum width=0.6cm, minimum height=0.4cm] at (7.4, 1.2) {$c_{12}$};
+    \node[fill=green!20, minimum width=0.6cm, minimum height=0.4cm] at (8.3, 1.2) {$c_{13}$};
+    \node[fill=red!40, minimum width=0.6cm, minimum height=0.4cm] at (6.5, 0.4) {$c_{21}$};
+    \node[fill=blue!40, minimum width=0.6cm, minimum height=0.4cm] at (7.4, 0.4) {$c_{22}$};
+    \node[fill=green!40, minimum width=0.6cm, minimum height=0.4cm] at (8.3, 0.4) {$c_{23}$};
+    \node[fill=red!60, minimum width=0.6cm, minimum height=0.4cm] at (6.5, -0.4) {$c_{31}$};
+    \node[fill=blue!60, minimum width=0.6cm, minimum height=0.4cm] at (7.4, -0.4) {$c_{32}$};
+    \node[fill=green!60, minimum width=0.6cm, minimum height=0.4cm] at (8.3, -0.4) {$c_{33}$};
+    \node at (7.4, -1.05) {$C_{3 \times 3}$};
+    
+    \draw[->, thick] (9.6, 0.5) -- (10.5, 0.5);
+    \node[above] at (10.05, 0.8) {$C^T$};
+    
+    % Matrix D = C^T (3 x 3), сдвинута вправо от стрелки
+    \draw[thick] (10.7, 1.6) -- (10.5, 1.6) -- (10.5, -0.6) -- (10.7, -0.6);
+    \draw[thick] (13.9, 1.6) -- (14.1, 1.6) -- (14.1, -0.6) -- (13.9, -0.6);
+    \node[fill=red!20, minimum width=0.6cm, minimum height=0.4cm] at (11.3, 1.2) {$c_{11}$};
+    \node[fill=red!40, minimum width=0.6cm, minimum height=0.4cm] at (12.2, 1.2) {$c_{21}$};
+    \node[fill=red!60, minimum width=0.6cm, minimum height=0.4cm] at (13.1, 1.2) {$c_{31}$};
+    \node[fill=blue!20, minimum width=0.6cm, minimum height=0.4cm] at (11.3, 0.4) {$c_{12}$};
+    \node[fill=blue!40, minimum width=0.6cm, minimum height=0.4cm] at (12.2, 0.4) {$c_{22}$};
+    \node[fill=blue!60, minimum width=0.6cm, minimum height=0.4cm] at (13.1, 0.4) {$c_{32}$};
+    \node[fill=green!20, minimum width=0.6cm, minimum height=0.4cm] at (11.3, -0.4) {$c_{13}$};
+    \node[fill=green!40, minimum width=0.6cm, minimum height=0.4cm] at (12.2, -0.4) {$c_{23}$};
+    \node[fill=green!60, minimum width=0.6cm, minimum height=0.4cm] at (13.1, -0.4) {$c_{33}$};
+    \node at (12.2, -1.05) {$D_{3 \times 3} = C^T$};
+    
 \end{tikzpicture}
 \end{center}
 
-## Basic operations: matrix addition
+## Основные операции: сложение матриц
 
 - :::{.callout-definition}
-**Matrix addition** is only possible for matrices of the same size. The result is obtained by adding corresponding elements.
-If $A, B \in \mathbb{R}^{n \times m}$, then $C = A + B$, where $c_{ij} = a_{ij} + b_{ij}$
+**Сложение матриц** возможно только для матриц одинакового размера. Результат получается сложением соответствующих элементов.
+Если $A, B \in \mathbb{R}^{n \times m}$, то $C = A + B$, где $c_{ij} = a_{ij} + b_{ij}$
 :::
 
-**Example:**
+**Пример:**
 $$\begin{bmatrix}
 1 & 2 \\
 3 & 4
@@ -102,14 +134,14 @@ $$\begin{bmatrix}
 10 & 12
 \end{bmatrix}$$
 
-## Basic operations: scalar multiplication
+## Основные операции: умножение на скаляр
 
 - :::{.callout-definition}
-**Scalar multiplication** - each element of the matrix is multiplied by the given number.
-If $A \in \mathbb{R}^{n \times m}$ and $\alpha \in \mathbb{R}$, then $C = \alpha A$, where $c_{ij} = \alpha \cdot a_{ij}$
+**Умножение на скаляр** — каждый элемент матрицы умножается на заданное число.
+Если $A \in \mathbb{R}^{n \times m}$ и $\alpha \in \mathbb{R}$, то $C = \alpha A$, где $c_{ij} = \alpha \cdot a_{ij}$
 :::
 
-**Example:**
+**Пример:**
 $$3 \cdot \begin{bmatrix}
 1 & 2 \\
 3 & 4
@@ -121,7 +153,7 @@ $$3 \cdot \begin{bmatrix}
 9 & 12
 \end{bmatrix}$$
 
-**Another example - Linear combination:**
+**Комбинация операций:**
 $$2 \begin{bmatrix}
 1 & 0 \\
 0 & 1
@@ -140,37 +172,37 @@ $$2 \begin{bmatrix}
 \end{bmatrix}$$
 
 
-## Vector
+## Вектор
 
-In the simplest representation, we treat a **vector** as a special case of a matrix:
+В самом простом представлении будем трактовать **вектор** как частный случай матрицы:
 
 ::: {.columns}
 
 ::: {.column width="50%"}
-### Column vector
+### Вектор-столбец
 $$\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} \in \mathbb{R}^{n \times 1}$$
 
-**Dimension:** $n \times 1$ (matrix with one column)
+**Размерность:** $n \times 1$ (матрица с одним столбцом)
 :::
 
 ::: {.column width="50%"}
-### Row vector
+### Вектор-строка
 $$\mathbf{y}^T = \begin{bmatrix} y_1 & y_2 & \cdots & y_m \end{bmatrix} \in \mathbb{R}^{1 \times m}$$
 
-**Dimension:** $1 \times m$ (matrix with one row)
+**Размерность:** $1 \times m$ (матрица с одной строкой)
 :::
 
 :::
 
-### Notation
+### Обозначения
 
-- **Vectors:** usually denoted by lowercase letters $x, v$ or $\mathbf{u}$
-- **Matrices:** usually denoted by uppercase letters $A, B, C$
-- **By default:** vector is considered a **column vector**
-- **Transpose:** $\mathbf{x}^{\top}$ converts column to row 
+- **Векторы:** обычно обозначаются строчными буквами $x, v$ или $\mathbf{u}$
+- **Матрицы:** обычно обозначаются заглавными буквами $A, B, C$
+- **По умолчанию:** вектор считается **вектором-столбцом**
+- **Транспонирование:** $\mathbf{x}^{\top}$ превращает столбец в строку 
 
-## Matrix-by-vector multiplication (matvec)
-### Standard approach
+## Умножение матрицы на вектор (matvec)
+### Обычный подход
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -261,34 +293,34 @@ $$\mathbf{y}^T = \begin{bmatrix} y_1 & y_2 & \cdots & y_m \end{bmatrix} \in \mat
 \end{center}
 
 
-## Matrix-by-vector multiplication (matvec)
-### Computational complexity and a brief look at parallel computing
+## Умножение матрицы на вектор (matvec)
+### Вычислительная сложность и немного о параллельных вычислениях
 
-**Recall the general formula:**
+**Вспомним общую формулу:**
 $$\boxed{y_j = \sum_{k=1}^{m} a_{jk} x_k, \quad j = 1, 2, \ldots, n}$$
 
-**Operations analysis:**
+**Анализ операций:**
 \begin{itemize}
-    \item For computing one element $y_j$: $m$ multiplications (each $a_{jk} \cdot x_k$), $m-1$ additions (summing $m$ products)
+    \item Для вычисления одного элемента $y_j$: $m$ умножений (каждое $a_{jk} \cdot x_k$), $m-1$ сложений (суммирование $m$ произведений)
 
-    \item For the entire vector $\mathbf{y}$ (n elements): $n \cdot (2m-1)$ total operations.
+    \item Для всего вектора $\mathbf{y}$ (n элементов): $n \cdot (2m-1)$ операций всего.
 \end{itemize}
 
-**Time complexity:**
+**Временная сложность:**
 \begin{itemize}
-    \item For square matrix $n \times n$: $\mathcal{O}(2n^2 - n) = \mathcal{O}(n^2)$
-    \item For rectangular matrix $n \times m$: $\mathcal{O}(nm)$
+    \item Для квадратной матрицы $n \times n$: $\mathcal{O}(2n^2 - n) = \mathcal{O}(n^2)$
+    \item Для прямоугольной матрицы $n \times m$: $\mathcal{O}(nm)$
 \end{itemize}
 
 ::: {.callout-tip}
-## Natural parallelism
-Computing each element $y_j$ is **independent** of other elements!
+## Естественный параллелизм
+Вычисление каждого элемента $y_j$ **независимо** от других элементов!
 :::
 
-- **Row-wise parallelization:** each processor computes its own $y_j$
+- **Построчная параллелизация:** отдельный процессор может вычислять свой $y_j$
 
-## Matrix-by-vector multiplication (matvec)
-### Guru approach
+## Умножение матрицы на вектор (matvec)
+### Просветленный подход :)
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -359,8 +391,8 @@ Computing each element $y_j$ is **independent** of other elements!
 \end{tikzpicture}
 \end{center}
 
-## Matrix-by-vector multiplication (matvec)
-### Guru approach
+## Умножение матрицы на вектор (matvec)
+### Просветленный подход :)
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -439,8 +471,8 @@ Computing each element $y_j$ is **independent** of other elements!
 $y_1 = \textcolor{red}{a_{11}x_1} + \textcolor{blue}{a_{12}x_2} + \textcolor{green}{a_{13}x_{3}} + \textcolor{orange}{a_{14}x_{4}}$
 \end{center}
 
-## Matrix-by-vector multiplication (matvec)
-### Guru approach
+## Умножение матрицы на вектор (matvec)
+### Просветленный подход :)
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -520,8 +552,8 @@ y_2 = \textcolor{red}{a_{21}x_1} + \textcolor{blue}{a_{22}x_2} + \textcolor{gree
 \end{center}
 
 
-## Matrix-by-vector multiplication (matvec)
-### Guru approach
+## Умножение матрицы на вектор (matvec)
+### Просветленный подход :)
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -604,8 +636,8 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
 \end{center}
 
 
-## Matrix-by-vector multiplication (matvec)
-### Guru approach
+## Умножение матрицы на вектор (matvec)
+### Просветленный подход :)
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -690,8 +722,8 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
 \end{tikzpicture}
 \end{center}
 
-## Matrix-by-vector product
-### Visual comparison
+## Умножение матрицы на вектор
+### Визуальное сравнение
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -704,9 +736,9 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
     \draw[thick] (-1.5, 2.5) -- (-1.7, 2.5) -- (-1.7, 1) -- (-1.5, 1);
     \draw[thick] (0.1, 2.5) -- (0.3, 2.5) -- (0.3, 1) -- (0.1, 1);
     
-    \node[fill=col1!40, minimum width=0.6cm, minimum height=0.5cm] at (-1, 2.2) {$3$};
+    \node[fill=col1!40, minimum width=0.6cm, minimum height=0.5cm] at (-1, 2.2) {$1$};
     \node[fill=col2!40, minimum width=0.6cm, minimum height=0.5cm] at (-0.4, 2.2) {$1$};
-    \node[fill=col1!40, minimum width=0.6cm, minimum height=0.5cm] at (-1, 1.3) {$2$};
+    \node[fill=col1!40, minimum width=0.6cm, minimum height=0.5cm] at (-1, 1.3) {$1$};
     \node[fill=col2!40, minimum width=0.6cm, minimum height=0.5cm] at (-0.4, 1.3) {$4$};
     
     \node[below] at (-0.7, 0.8) {$A$};
@@ -727,8 +759,8 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
     \draw[thick] (3.8, 2.5) -- (3.6, 2.5) -- (3.6, 1) -- (3.8, 1);
     \draw[thick] (4.8, 2.5) -- (5, 2.5) -- (5, 1) -- (4.8, 1);
     
-    \node[fill=result!20, minimum width=0.6cm, minimum height=0.5cm] at (4.3, 2.2) {$7$};
-    \node[fill=result!20, minimum width=0.6cm, minimum height=0.5cm] at (4.3, 1.3) {$8$};
+    \node[fill=result!20, minimum width=0.6cm, minimum height=0.5cm] at (4.3, 2.2) {$3$};
+    \node[fill=result!20, minimum width=0.6cm, minimum height=0.5cm] at (4.3, 1.3) {$6$};
     
     \node[below] at (4.3, 0.8) {$\mathbf{y}$};
     
@@ -738,22 +770,18 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
 ::: {.columns}
 
 ::: {.column width="50%"}
-### Traditional View: Row-wise
+### Строка на столбец
 
-**Calculations:**
+**Вычисления:**
 \begin{itemize}
-\item $y_1 = 3 \cdot 2 + 1 \cdot 1 = 7$
+\item $y_1 = 1 \cdot 2 + 1 \cdot 1 = 3$
 
-\item $y_2 = 2 \cdot 2 + 4 \cdot 1 = 8$
+\item $y_2 = 1 \cdot 2 + 4 \cdot 1 = 6$
 \end{itemize}
 :::
 
 ::: {.column width="50%"}
-### Guru View: Column Linear Combination
-
-
-
-**Linear combination:**
+### Комбинация столбцов
 
 \begin{tikzpicture}[scale=0.8]
     % Define colors
@@ -761,34 +789,34 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
     \definecolor{col2}{RGB}{102,178,255}  % Blue for second column
     \definecolor{result}{RGB}{102,255,102}  % Green for result
     
-    % Grid first (so it's behind everything)
+    % Grid: step=0.5, 1 unit in R^2 = 0.5 in TikZ (aligns with grid cells)
     \draw[gray!30] (0, -3.5) grid[step=0.5] (4, 1);
     
-    % Coordinate system (drawn after grid)
+    % Coordinate system (origin at (2, -2))
     \draw[->, thick] (-0.5, -2) -- (4.5, -2) node[right] {$x$};
     \draw[->, thick] (2, -3.8) -- (2, 1.3) node[above] {$y$};
     
-    % First column vector: [3, 2] scaled by 2 = [6, 4]
-    \draw[very thick, col1, ->] (2, -2) -- (3.5, 0) node[midway, above left] {\small $2 \cdot \mathbf{a_1}$};
-    \node[col1, below right] at (3.5, 0) {\small $\begin{bmatrix} 6 \\ 4 \end{bmatrix}$};
+    % First column vector: a_1=[1,1], 2*a_1=[2,2]. Scale: 1 unit = 0.5
+    \draw[very thick, col1, ->] (2, -2) -- (3, -1) node[midway, above left] {\small $2 \cdot \mathbf{a_1}$};
+    \node[col1, below right] at (3, -1) {\small $\begin{bmatrix} 2 \\ 2 \end{bmatrix}$};
     
-    % Second column vector: [1, 4] scaled by 1, starting from end of first vector
-    \draw[very thick, col2, ->] (3.5, 0) -- (4, 2) node[midway, above right] {\small $1 \cdot \mathbf{a_2}$};
-    \node[col2, above right] at (4, 2) {\small $\begin{bmatrix} 1 \\ 4 \end{bmatrix}$};
+    % Second column vector: a_2=[1,4], 1*a_2=[1,4]. From (3,-1) add (0.5,2) -> (3.5,1)
+    \draw[very thick, col2, ->] (3, -1) -- (3.5, 1) node[midway, above right] {\small $1 \cdot \mathbf{a_2}$};
+    \node[col2, above right] at (3.5, 1) {\small $\begin{bmatrix} 1 \\ 4 \end{bmatrix}$};
     
-    % Result vector (from origin to final point)
-    \draw[very thick, result, ->] (2, -2) -- (4, 2) node[midway, below right] {\small $\mathbf{y}$};
-    \node[result, above left] at (4, 2) {\small $\begin{bmatrix} 7 \\ 8 \end{bmatrix}$};
+    % Result vector: y=[3,6]. Scale: (1.5, 3) -> (2+1.5, -2+3)=(3.5, 1)
+    \draw[very thick, result, ->] (2, -2) -- (3.5, 1) node[midway, below right] {\small $\mathbf{y}$};
+    \node[result, above left] at (3.5, 1) {\small $\begin{bmatrix} 3 \\ 6 \end{bmatrix}$};
     
     % Origin
     \node[below left] at (2, -2) {$O$};
     
-    % Dashed line showing the parallelogram construction
-    \draw[dashed, gray] (3.5, 0) -- (4, 0) -- (4, 2);
+    % Dashed parallelogram: (3,-1) -> (3.5,-1) -> (3.5,1)
+    \draw[dashed, gray] (3, -1) -- (3.5, -1) -- (3.5, 1);
     
-    % Labels for column vectors (moved further left and separated)
-    \node[col1, align=left] at (-1, 0.5) {\small First column: \\ $\mathbf{a_1} = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$};
-    \node[col2, align=left] at (-1, -1.5) {\small Second column: \\ $\mathbf{a_2} = \begin{bmatrix} 1 \\ 4 \end{bmatrix}$};
+    % Labels for column vectors
+    \node[col1, align=left] at (-1, 0.5) {\small Первый столбец: \\ $\mathbf{a_1} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$};
+    \node[col2, align=left] at (-1, -1.5) {\small Второй столбец: \\ $\mathbf{a_2} = \begin{bmatrix} 1 \\ 4 \end{bmatrix}$};
     
 \end{tikzpicture}
 
@@ -796,8 +824,8 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
 
 :::
 
-## Matrix-by-matrix multiplication (matmul, General Matrix Multiplication - GEMM)
-### Standard approach
+## Умножение матриц (matmul, GEneral Matrix Multiplication - GEMM)
+### Обычный подход
 
 \begin{center}
 \begin{tikzpicture}[scale=0.7]
@@ -813,7 +841,7 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
     \draw[thick] (0.3, 3) -- (0.5, 3) -- (0.5, -2) -- (0.3, -2);
     
     % i-th row label (on the left)
-    \node[rowcolor, left] at (-4, 0.5) {\small $i$-th row};
+    \node[rowcolor, left] at (-4, 0.5) {\small $i$-я строка};
     \draw[rowcolor, ->] (-3.8, 0.5) -- (-3.5, 0.5);
     
     % Matrix A elements - highlight i-th row
@@ -857,7 +885,7 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
     \draw[thick] (6.1, 2.8) -- (6.3, 2.8) -- (6.3, -0.2) -- (6.1, -0.2);
     
     % j-th column label (on the top)
-    \node[colcolor, above] at (4.1, 3.2) {\small $j$-th column};
+    \node[colcolor, above] at (4.1, 3.2) {\small $j$-й столбец};
     \draw[colcolor, ->] (4.1, 3) -- (4.1, 2.7);
     
     % Matrix B elements - highlight j-th column
@@ -949,8 +977,8 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
 \end{tikzpicture}
 \end{center}
 
-## Matrix multiplication (matmul, General Matrix Multiplication - GEMM)
-### Column-wise approach
+## Умножение матриц (matmul, GEneral Matrix Multiplication - GEMM)
+### Столбцовый подход
 
 \begin{center}
 \begin{tikzpicture}[scale=0.7]
@@ -1088,7 +1116,7 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
     \node at (11.1, -2.7) {$C$};
     
     % Explanation showing column-wise computation
-    \node at (5.6, -3.5) {\small Each column of $C$ = $A \times$ corresponding column of $B$};
+    \node at (5.6, -3.5) {\small Каждый столбец $C$ = $A \times$ соответствующий столбец $B$};
     
     % General formula in a box
     \node at (5.6, -4.8) {\boxed{\textcolor{purple}{\mathbf{C_j} = A \mathbf{B_j}, \quad j = 1, 2, \ldots, m}}};
@@ -1096,79 +1124,77 @@ y_3 = \textcolor{red}{a_{31}x_1} + \textcolor{blue}{a_{32}x_2} + \textcolor{gree
 \end{tikzpicture}
 \end{center}
 
-## Matrix multiplication (matmul, General Matrix Multiplication - GEMM)
-### Properties of matrix multiplication
+## Умножение матриц (matmul, GEneral Matrix Multiplication - GEMM)
+### Свойства матричного умножения
 
-1. **Associativity:**
+1. **Ассоциативность:**
    $$(AB)C = A(BC)$$
    
-2. **Distributivity:**
+2. **Дистрибутивность:**
    $$A(B + C) = AB + AC$$
    $$(A + B)C = AC + BC$$
 
-3. **Scalar multiplication:**
+3. **Умножение на скаляр:**
    $$\alpha(AB) = (\alpha A)B = A(\alpha B)$$
 
-## Matrix multiplication (matmul, General Matrix Multiplication - GEMM)
-### Important limitations
+## Умножение матрицы на матрицу (matmul, GEMM)
+### Важные ограничения
 
-4. **Non-commutativity:**
-   $$AB \neq BA \quad \text{(in general)}$$
+4. **Некоммутативность:**
+   $$AB \neq BA \quad \text{(в общем случае)}$$
    
-   **Example:** For $2 \times 2$ matrices:
+   **Пример:** Для матриц $2 \times 2$:
    $$\begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix} = \begin{bmatrix} 3 & 2 \\ 1 & 1 \end{bmatrix}$$
    
    $$\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 2 \\ 1 & 3 \end{bmatrix}$$
 
-5. **Transpose of product:**
+5. **Транспонирование произведения:**
    $$(AB)^T = B^T A^T$$
    
    ::: {.callout-note}
-   Note the **reversed order** of matrices when transposing!
+   Обратите внимание на **обратный порядок** матриц при транспонировании!
    :::
 
-## Matrix multiplication (matmul, General Matrix Multiplication - GEMM)
-### Computational complexity and parallelization
+## Умножение матриц (matmul, GEneral Matrix Multiplication - GEMM)
+### Вычислительная сложность и параллелизация
 
-**Recall the general formula:**
+**Вспомним общую формулу:**
 $$\boxed{c_{ij} = \sum_{l=1}^{k} a_{il} b_{lj}, \quad i = 1, 2, \ldots, n, \quad j = 1, 2, \ldots, m}$$
 
-**Operations analysis for matrices $A_{n \times k}$ and $B_{k \times m}$:**
+**Анализ операций для матриц $A_{n \times k}$ и $B_{k \times m}$:**
 \begin{itemize}
-    \item For computing one element $c_{ij}$: $k$ multiplications, $k-1$ additions
-    \item Total number of operations: $n \times m \times (2k-1)$
+    \item Для вычисления одного элемента $c_{ij}$: $k$ умножений, $k-1$ сложений
+    \item Общее количество операций: $n \times m \times (2k-1)$
 \end{itemize}
 
-**Time complexity:**
+**Временная сложность:**
 \begin{itemize}
-    \item For square matrices $n \times n$: $\mathcal{O}(2n^3 - n^2) = \mathcal{O}(n^3)$
-    \item For rectangular matrices: $\mathcal{O}(nmk)$
+    \item Для квадратных матриц $n \times n$: $\mathcal{O}(2n^3 - n^2) = \mathcal{O}(n^3)$
+    \item Для прямоугольных матриц: $\mathcal{O}(nmk)$
 \end{itemize}
 
 ::: {.callout-tip}
-## Natural parallelism
-- **By elements:** each $c_{ij}$ is computed independently
-- **By rows:** each processor handles its rows of matrix $A$
-- **By columns:** each processor handles its columns of matrix $B$
-- **Block approach:** dividing matrices into blocks for efficient cache usage
+## Естественный параллелизм
+- **По элементам:** каждый $c_{ij}$ вычисляется независимо
+- **По строкам:** каждый процессор обрабатывает свои строки матрицы $A$
+- **По столбцам:** каждый процессор обрабатывает свои столбцы матрицы $B$
+- **Блочный подход:** разделение матриц на блоки для эффективного использования кэша
 :::
 
-## Example. Simple but important idea about matrix computations.
+## Пример. Простая, но важная идея о матричных вычислениях.
 
-Suppose you have the following expression
+Предположим, у вас есть следующее выражение
 
 $$
 b = A_1 A_2 A_3 x,
 $$
 
-where $A_1, A_2, A_3 \in \mathbb{R}^{3 \times 3}$ are random square dense (fully filled with numbers) matrices, and $x \in \mathbb{R}^3$ is a vector. You need to compute $b$.
+где $A_1, A_2, A_3 \in \mathbb{R}^{3 \times 3}$ - случайные квадратные плотные (полностью заполненные числами) матрицы, и $x \in \mathbb{R}^3$ - вектор. Вам нужно вычислить $b$.
 
-Which approach is best to use?
+Какой способ лучше всего использовать?
 \begin{enumerate}
-    \item $A_1 A_2 A_3 x$ (left to right)
-    \item $\left(A_1 \left(A_2 \left(A_3 x\right)\right)\right)$ (right to left)
-    \item It doesn't matter
-    \item The results of the first two options will not be the same.
+    \item $A_1 A_2 A_3 x$ (слева направо)
+    \item $\left(A_1 \left(A_2 \left(A_3 x\right)\right)\right)$ (справа налево)
+    \item Не имеет значения
+    \item Результаты первых двух вариантов не будут одинаковыми.
 \end{enumerate}
-
-Check the attached .ipynb file in the repository.
