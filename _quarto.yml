@@ -5,8 +5,10 @@ project:
     - "*.mp4"
     - "*.txt"
     - "*.csv"
+    - "assignments/*.pdf"
+    - "CNAME"
 
-lang: ru
+lang: en
 
 execute:
   freeze: auto
@@ -15,16 +17,16 @@ filters:
   - course
 
 website:
-  navbar:
-    left: 
-        - program.md
-    title: false
   repo-url: https://github.com/glkarpov/linalg_mds_25
   repo-branch: main
   repo-actions: [edit]
   search: 
-    location: navbar
+    location: sidebar
     type: textbox
   twitter-card: true
   open-graph: true
   favicon: favicon.svg
+
+format:
+  html:
+    css: custom.css

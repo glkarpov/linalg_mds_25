@@ -1,13 +1,14 @@
 ---
-title: 📜 Materials
-nav_order: 2
+title: Lectures
 listing:
   - id: materials
-    contents: 
+    contents:
       - materials.yml
     template: materials_template.ejs
     page-size: 50
 ---
+
+## Lectures
 
 :::{#materials}
 :::
