@@ -1,16 +1,30 @@
 [
   {
-    "objectID": "program.html",
-    "href": "program.html",
-    "title": "📜 Materials",
-    "section": "",
-    "text": "Занятие 1\n    \n        📄 Презентация • 📄 Presentation • 📝 Заметки\n    \n    \n        Matrices and vectors. Basic operations.\n    \n\n    Занятие 2\n    \n        📄 Презентация\n    \n    \n        Vectors and vector spaces. Linear combination and span. Dependence and independence of vectors.\n    \n\n    Занятие 3\n    \n        📄 Презентация • 📝 Заметки 1 поток • 📝 Заметки 2 поток\n    \n    \n        Basis of a vector space. Examples.\n    \n\n    Занятие 4\n    \n        📄 Презентация • 📝 Заметки 1 поток • 📝 Заметки 2 поток • 🗺️ Mind Map\n    \n    \n        Linear transformations. Matrix representation.\n    \n\n    Занятие 5\n    \n        📄 Презентация • 📝 Заметки 1 поток • 📝 Заметки 2 поток\n    \n    \n        Change of basis as a linear transformation.\n    \n\n    Занятие 6\n    \n        📝 Заметки 1 поток • 📝 Заметки 2 поток\n    \n    \n        Concept of a matrix inverse. Application for a change of basis.\n    \n\n    Занятие 7\n    \n        📄 Презентация • 📝 Заметки 1 поток • 📝 Заметки 2 поток\n    \n    \n        Change of a linear transformation matrix when changing bases.\n    \n\n    Занятие 8\n    \n        📄 Презентация • 📝 Заметки 1 поток • 📝 Заметки 2 поток\n    \n    \n        System of linear equations. Gaussian elimination. Reduced row echelon form.\n    \n\n    Занятие 9\n    \n        📄 Презентация • 📝 Заметки 1 поток • 📝 Заметки 2 поток\n    \n    \n        Inner product spaces. Normed spaces. Vector norms.\n    \n\n    Занятие 10\n    \n        📄 Презентация • 📝 Заметки 1 поток • 📝 Заметки 2 поток\n    \n    \n        Back to SLEs. Usage  of  reduced row echelon form to analyze collections of vectors.\n    \n\n    Занятие 11\n    \n        📝 Заметки 1 поток • 📝 Заметки 2 поток • 📝 Список заданий\n    \n    \n        Practical session. Problems on linear transformations.\n    \n\n    Занятие 12\n    \n        📝 Заметки 1 поток • 📝 Заметки 2 поток\n    \n    \n        Orthogonal basis. Orthogonalization of a basis.\n    \n\n    Занятие \n    \n        📝 Заметки • 📝 Список заданий\n    \n    \n        Additional class. Problems on change of coordinates.\n    \n\nНет подходящих элементов"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Main",
+    "title": "Linear Algebra",
     "section": "",
-    "text": "Linear algebra\n\nCourse for students of the online “Master of Data Science” program, implemented at the Faculty of Computer Science, HSE University.\nThe course is adaptive and aims both to introduce students to the fundamental topics of linear algebra: vector spaces, bases, linear mappings - and to demonstrate the emergence of these concepts in the practical application of linear algebra in data science and machine learning.\n\n\n\nTeam\n\n\n    \n        \n            \n                \n                  \n                    \n                  \n                  \n                    \n                      Глеб Карпов\n                    \n                    Лектор\n                  \n                \n              \n        \n    \n\nНет подходящих элементов"
+    "text": "Lectures\nProblem sets"
+  },
+  {
+    "objectID": "program.html",
+    "href": "program.html",
+    "title": "Lectures",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "program.html#lectures",
+    "href": "program.html#lectures",
+    "title": "Lectures",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "homework.html",
+    "href": "homework.html",
+    "title": "Problem sets",
+    "section": "",
+    "text": "No matching items"
   }
 ]
