@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://linalg-fcs.edu.glebkarpov.com/notebooks/svd-practise/svd-short.html</loc>
-    <lastmod>2026-06-26T07:36:41.919Z</lastmod>
-  </url>
-  <url>
     <loc>https://linalg-fcs.edu.glebkarpov.com/index.html</loc>
-    <lastmod>2026-11-07T16:27:56.818Z</lastmod>
+    <lastmod>2026-11-11T19:26:46.536Z</lastmod>
   </url>
   <url>
     <loc>https://linalg-fcs.edu.glebkarpov.com/program.html</loc>
-    <lastmod>2026-11-07T16:27:57.236Z</lastmod>
+    <lastmod>2026-11-11T19:26:46.539Z</lastmod>
   </url>
   <url>
     <loc>https://linalg-fcs.edu.glebkarpov.com/homework.html</loc>
-    <lastmod>2026-11-07T16:27:57.680Z</lastmod>
-  </url>
-  <url>
-    <loc>https://linalg-fcs.edu.glebkarpov.com/notebooks/svd-practise/Matrix Decompositions-SVD.html</loc>
-    <lastmod>2026-04-20T17:59:57.752Z</lastmod>
+    <lastmod>2026-11-11T19:26:46.536Z</lastmod>
   </url>
 </urlset>
