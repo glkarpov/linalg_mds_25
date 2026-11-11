@@ -1,7 +1,7 @@
 ---
 title: "Линейная алгебра"
-subtitle: "Базис векторного пространства."
-institute: "МНаД ФКН ВШЭ"
+subtitle: "Векторное пространство. Линейная комбинация и оболочка."
+institute: "Прикладные нейросетевые технологии, ФКН ВШЭ"
 author: "Глеб Карпов"
 format: 
     beamer:
@@ -11,121 +11,189 @@ format:
         theme: Singapore
         fonmttheme: serif
         section-titles: true
-        incremental: true
+        incremental: false
         include-in-header: ../files/xeheader.tex  # Custom LaTeX commands and preamble
 ---
-## Базис
-### Определение
 
-- Набор векторов $v_1, \ldots, v_n$ из $\mathbb{V}$ называется _базисом_ пространства $\mathbb{V}$ тогда и только тогда, когда _любой_ вектор $x \in \mathbb{V}$ может быть уникально представлен в форме линейной комбинации:
+## Векторное пространство
+### Основной предмет изучения линейной алгебры
+
+\begin{itemize}
+\item Рассмотрим некоторое множество элементов $V$. Помимо того, что в нем просто живут абстрактные элементы, зададим там бинарные операции.
+
+\item Сложение. Любым двум элементам из множества $V$ ставится в соответствие третий:
 $$
-    x = \alpha_1 v_1 + \ldots + \alpha_n v_n.
+    \forall x, \, y \in \mathbb{V}: \quad x \oplus y = w, \, w \in \mathbb{V}. 
 $$
 
-- Соответствующие уникальные коэффициенты $\alpha_1, \ldots, \alpha_n$ мы называем _координатами_ вектора $x$ в базисе $(v_1, \ldots, v_n)$.
+\item Умножение на скаляр. Любой паре элементов из $\mathbb{V}$ и $\mathbb{R}$ ставится в соответствие элемент из $V$:
+$$
+    \forall x \in \mathbb{V}, \, \forall \alpha \in \mathbb{R}: \quad \alpha \otimes x = w, \, w \in \mathbb{V}. 
+$$
+\end{itemize}
 
-- Немного иначе: набор векторов $v_1, \ldots, v_n$ из $\mathbb{V}$ называется _базисом_ пространства $\mathbb{V}$ тогда и только тогда, когда этот набор векторов линейно независим и $\text{span} (v_1, \ldots, v_n) = \mathbb{V}$, то есть мы можем 'дотянуться' до любого элемента из $\mathbb{V}$.
+## Векторное пространство
+### Примеры векторных пространств
 
-## Базис. Примеры
+Coordinate space. Множество последовательностей длины $n$, частным случаем которых являются геометрические векторы.
+$$
+    a = \begin{pmatrix}
+        a_{1}\\
+        a_{2}\\
+        \vdots\\
+        a_{n}
+    \end{pmatrix}
+$$
 
-### Пример в координатном векторном пространстве
+## Векторное пространство
+### Примеры векторных пространств
 
-- Координатное пространство $\mathbb{R}^2$. Возьмем вектор, например, $x = \vtwo{5}{2}$:
+- Множество матриц $n \times m$.
+$$
+    A = \begin{pmatrix}
+        5 & 2\\
+        -2 & 7
+    \end{pmatrix}, \; 
+    B = \begin{pmatrix}
+        1 & 4\\
+        3 & 0
+    \end{pmatrix}
+$$
 
-\begin{align*}
-\vtwo{5}{2} & = \textcolor{violet}{5} \vtwo{1}{0} + \textcolor{violet}{2} \vtwo{0}{1}, \quad [x]_S = \vtwo{\textcolor{violet}{5}}{\textcolor{violet}{2}}, \quad S = \left(\vtwo{1}{0}, \, \vtwo{0}{1} \right) \\
-\vtwo{5}{2} & = \textcolor{violet}{0.5} \vtwo{2}{4} + \textcolor{violet}{-0.5} \vtwo{-8}{0}, \quad [x]_B = \vtwo{\textcolor{violet}{0.5}}{\textcolor{violet}{-0.5}}, \quad B = \left(\vtwo{2}{4}, \, \vtwo{-8}{0} \right) \\
-\vtwo{5}{2} & = \textcolor{violet}{-0.25} \vtwo{-8}{2} + \textcolor{violet}{-5.5} \vtwo{0}{-1}, \quad [x]_C = \vtwo{\textcolor{violet}{-0.25}}{\textcolor{violet}{-5.5}}, \quad C = \left(\vtwo{-8}{2}, \, \vtwo{0}{-1} \right) \\
-\end{align*}
+- Множество полиномов (Что? Да!) фиксированной максимальной степени.
+\begin{gather*}
+    f(x) = a_1 x^2 + b_1 x + c_1, \; g(x) = a_2 x^2 + b_2 x + c_2 \\
+    f(x)+g(x) = (a_1 + a_2) x^2 + (b_1 + b_2)x + (c_1 + c_2) \\
+    \alpha \in \mathbb{R}: \, \alpha f(x) = (\alpha a_1) x^2 + (\alpha b_1) x + (\alpha c_1)
+\end{gather*}
 
-## Базис. Примеры
-### Пример в векторном пространстве полиномов
+## Линейная комбинация
 
-- Векторное пространство $\mathbb{R}[x,2]$. Возьмем вектор, например, $f(x) = 2x^2 - 7x + 4$ и посмотрим его представление в разных базисах:
+\begin{itemize}
+\item С помощью определенных выше операций мы можем комбинировать элементы векторного пространства.
 
-\begin{align*}
-f(x) & = \textcolor{violet}{2} \cdot x^2 + \textcolor{violet}{-7} \cdot x + \textcolor{violet}{4} \cdot 1, \quad [x]_S = \vthree{\textcolor{violet}{2}}{\textcolor{violet}{-7}}{\textcolor{violet}{4}}, \quad S = \left(x^2, \, x , \, 1 \right) \\
-f(x) & = \textcolor{violet}{0.5} \cdot (4x^2 - 2x) + \textcolor{violet}{-2} \cdot (3x) + \textcolor{violet}{0.5} \cdot 8, \quad [x]_B = \vthree{\textcolor{violet}{0.5}}{\textcolor{violet}{-2}}{\textcolor{violet}{0.5}}, \quad B = \left(4x^2 - 2x, \, 3x , \, 8 \right)
-\end{align*}
+\item Предположим, мы вытащили набор векторов $v_1, \ldots, v_m$ из $\mathbb{V}$, и набор скаляров $\alpha_1, \ldots, \alpha_m$ из $\mathbb{R}$.
 
-## Важный промежуточный вывод
+\item \textit{Линейная комбинация} группы векторов - новый вектор, построенный в виде:
+$$
+    x = \alpha_1 v_1 + \ldots + \alpha_m v_m, \, x \in \mathbb{V}.
+$$
+
+\item Из-за замкнутости $\mathbb{V}$ относительно двух введенных операций получившийся элемент $x$ тоже содержится в векторном пространстве $\mathbb{V}$.
+\end{itemize}
+
+## Примеры линейных комбинаций
 
 ::: {.columns}
 
 ::: {.column width="50%"}
 
-\begin{tikzpicture}[scale=1.0]
-% Центральный вектор
-\node[draw, rectangle, minimum width=1.5cm, minimum height=2cm, fill=blue!20] (vector) at (0,0) {
-\begin{minipage}{1.2cm}
-\centering
-$\begin{pmatrix}
-x_1 \\
-x_2 \\
-\vdots \\
-x_n
-\end{pmatrix}$
-\end{minipage}
-};
+Пример: $\mathbb{V} = \mathbb{R}^{2 \times 2}$
 
-% Векторные пространства - круги
-\node[draw, circle, minimum size=2cm, fill=red!20] (polynomials) at (-3, 2) {
-\begin{minipage}{1.8cm}
-\centering
-\textbf{Полиномы}\\
-$p(x) = a_0 + a_1x + \ldots + a_{n-1}x^{n-1}$
-\end{minipage}
-};
+\begin{equation*}
+\textcolor{red}{A} = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix},
+\textcolor{blue}{B} = \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}
+\end{equation*}
 
-\node[draw, circle, minimum size=2cm, fill=green!20] (matrices) at (3, 2) {
-\begin{minipage}{1.8cm}
-\centering
-\textbf{Матрицы}\\
-$A = \begin{pmatrix}
-a_{11} & a_{12} \\
-a_{21} & a_{22}
-\end{pmatrix}$
-\end{minipage}
-};
-
-\node[draw, circle, minimum size=2cm, fill=yellow!20] (functions) at (0, 3.5) {
-\begin{minipage}{1.8cm}
-\centering
-\textbf{Функции}\\
-$f: \mathbb{R} \to \mathbb{R}$
-\end{minipage}
-};
-
-% Стрелки от пространств к вектору
-\draw[thick, ->] (polynomials) -- (vector);
-\draw[thick, ->] (matrices) -- (vector);
-\draw[thick, ->] (functions) -- (vector);
-
-% Подпись
-\node[below] at (0, -1.) {\textbf{Линейная алгебра: единый язык для разных объектов}};
-
-\end{tikzpicture}
+**Линейная комбинация:**
+$$
+    2\textcolor{red}{A} + 3\textcolor{blue}{B} = 2\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix} + 3\begin{pmatrix}0 & 1 \\ 1 & 0\end{pmatrix} = \begin{pmatrix}2 & 3 \\ 3 & 2\end{pmatrix}
+$$
 
 :::
 
 ::: {.column width="50%"}
 
-\begin{itemize}
-    \item Если векторное пространство $\mathbb{V}$ имеет базис $\mathbf{v}_1, \ldots, \mathbf{v}_n$, то любой вектор $\mathbf{v}$ однозначно определяется своими координатами $\alpha_k$ в этом базисе. Если мы упакуем $\alpha_k$ в вектор из $\mathbb{R}^n$, то можем оперировать им вместо оперирования над $\mathbf{v}$.
+Пример: $\mathbb{V} = \mathbb{R}[x, 2]$
 
-    \item Если $\mathbf{v}=\sum_{k=1}^n \alpha_k \mathbf{v}_k$ и $\mathbf{w}=\sum_{k=1}^n \beta_k \mathbf{v}_k$, то
-$$
-\mathbf{v}+\mathbf{w}=\sum_{k=1}^n \alpha_k \mathbf{v}_k+\sum_{k=1}^n \beta_k \mathbf{v}_k=\sum_{k=1}^n\left(\alpha_k+\beta_k\right) \mathbf{v}_k
-$$
-т.е. вместо сложения двух оригинальных векторов, можно сложить векторы координат. 
+\begin{equation*}
+    \textcolor{red}{p_1}(x) = 1.5x^2 - x, \quad \textcolor{blue}{p_2}(x) = x+1, \quad \textcolor{green}{p_3}(x) = 2
+\end{equation*}
 
-\item Аналогично, чтобы получить $\alpha \mathbf{v}$, можно умножить столбец координат $\mathbf{v}$ на $\alpha$ и сразу получить координаты вектора $\alpha \mathbf{v}$.
-\end{itemize}
+**Линейная комбинация:**
+\begin{gather*}
+    2\textcolor{red}{p_1} + (-2)\textcolor{blue}{p_2} + 5\textcolor{green}{p_3} = \\
+    2 (1.5x^2 - x) - 2(x+1) + 5(2) = \\
+    3x^2 - 4x + 8
+\end{gather*}
 
 :::
 
 :::
 
+## Линейная оболочка
 
+Множество всех-всех возможных линейных комбинаций, полученных из зафиксированного набора векторов $v_1, \ldots, v_m$, назовем _линейной оболочкой_ этого набора и обозначим:
+$$
+    \text{span} (v_1, \ldots, v_m) = \{ \alpha_1 v_1 + \ldots + \alpha_m v_m : a_1, \ldots, \alpha_m \in \mathbb{R} \}. 
+$$
 
+::: {.columns}
+
+::: {.column width="50%"}
+\begin{gather*}
+\textcolor{red}{a} = \begin{pmatrix}
+2 \\
+0
+\end{pmatrix},
+\textcolor{blue}{b} = \begin{pmatrix}
+0 \\
+1
+\end{pmatrix} \\
+\text{span}  (\textcolor{red}{a}, \textcolor{blue}{b}) =  \{\alpha_1 \textcolor{red}{a} + \alpha_2 \textcolor{blue}{b} : \forall \alpha_1, \alpha_2 \in \mathbb{R}  \} = \mathbb{R}^2
+\end{gather*}
+\begin{tikzpicture}[scale=0.8]
+% Координатные оси
+\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+\draw[->] (0,-3) -- (0,3) node[above] {$y$};
+
+% Сетка
+\draw[gray, very thin] (-3,-3) grid (3,3);
+
+% Вектор (2,0) - красный
+\draw[thick, red, ->] (0,0) -- (2,0) node[midway, below] {$(2,0)$};
+
+% Вектор (0,1) - синий  
+\draw[thick, blue, ->] (0,0) -- (0,1) node[midway, left] {$(0,1)$};
+\end{tikzpicture}
+
+:::
+
+::: {.column width="50%"}
+\begin{gather*}
+\textcolor{red}{c} = \begin{pmatrix}
+1 \\
+1
+\end{pmatrix},
+\textcolor{blue}{d} = \begin{pmatrix}
+4 \\
+4
+\end{pmatrix} \\
+\text{span}  (\textcolor{red}{c}, \textcolor{blue}{d}) =  \{\alpha_1 \textcolor{red}{c} + \alpha_2 \textcolor{blue}{d} : \forall \alpha_1, \alpha_2 \in \mathbb{R}  \} = \text{линия}
+\end{gather*}
+\begin{tikzpicture}[scale=0.8]
+% Координатные оси
+\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+\draw[->] (0,-3) -- (0,3) node[above] {$y$};
+
+% Сетка
+\draw[gray, very thin] (-3,-3) grid (3,3);
+
+% Вектор (1,1) - красный
+\draw[thick, red, ->] (0,0) -- (1,1) node[midway, above left] {$(1,1)$};
+
+% Вектор (4,4) - синий
+\draw[thick, blue, ->] (0,0) -- (2,2) node[midway, above] {$(4,4)$};
+
+% Линия span - толстая серая линия
+\draw[thick, gray, dashed] (-2.5,-2.5) -- (2.5,2.5);
+\end{tikzpicture}
+:::
+:::
 

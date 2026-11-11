@@ -1,3 +1,11 @@
-- title: Matrices and vectors. Basic operations.
-  number: 1
+- title: Введение. Матрицы и векторы. Основные операции.
+  number: 1-2
   slides_ru: /lectures/lecture_1_ru.pdf
+
+- title: Векторное пространство. Линейная комбинация и оболочка.
+  number: 3
+  slides_ru: /lectures/lecture_3.pdf
+
+- title: Линейная зависимость и независимость. Базис.
+  number: 4
+  slides_ru: /lectures/lecture_4.pdf
