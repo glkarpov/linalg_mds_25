@@ -9,3 +9,11 @@
 - title: Линейная зависимость и независимость. Базис.
   number: 4
   slides_ru: /lectures/lecture_4.pdf
+
+- title: Системы линейных уравнений.
+  number: 5
+  slides_ru: /lectures/lecture_5.pdf
+
+- title: СЛУ для анализа векторов.
+  number: 6
+  slides_ru: /lectures/lecture_6.pdf
