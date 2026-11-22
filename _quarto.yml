@@ -6,6 +6,7 @@ project:
     - "*.txt"
     - "*.csv"
     - "assignments/*.pdf"
+    - "notes/*.pdf"
     - "CNAME"
 
 lang: en

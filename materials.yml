@@ -13,7 +13,9 @@
 - title: Системы линейных уравнений.
   number: 5
   slides_ru: /lectures/lecture_5.pdf
+  notes: /notes/lecture_5_notes.pdf
 
 - title: СЛУ для анализа векторов.
   number: 6
   slides_ru: /lectures/lecture_6.pdf
+  notes: /notes/lecture_6_notes.pdf

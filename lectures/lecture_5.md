@@ -11,7 +11,7 @@ format:
         theme: Singapore
         fonmttheme: serif
         section-titles: true
-        incremental: true
+        incremental: false
         include-in-header: ../files/xeheader.tex  # Custom LaTeX commands and preamble
 ---
 
@@ -108,12 +108,36 @@ a_{m1} & \dots & a_{mn} & b_m
 Для каждой строки обведен её ведущий элемент. Ведущий элемент каждой строки смещен строго вправо относительно ведущего элемента предыдущей строки.
 
 ## Ступенчатый вид
+### Back substitution
+
+Возьмём последний пример — хорошая квадратная система $3 \times 3$:
+
+\begin{equation*}
+\left(\begin{array}{c c c|c}
+\boxed{1} & 2 & 3 & 1 \\
+0 & \boxed{2} & 2 & 2 \\
+0 & 0 & \boxed{2} & 6
+\end{array}\right)
+\end{equation*}
+
+**Back substitution**: идём снизу вверх и последовательно выражаем ведущие переменные.
+
+\begin{align*}
+2x_3 &= 6 &&\Rightarrow\quad x_3 = 3 \\
+2x_2 + 2x_3 &= 2 &&\Rightarrow\quad 2x_2 + 6 = 2 &&\Rightarrow\quad x_2 = -2 \\
+x_1 + 2x_2 + 3x_3 &= 1 &&\Rightarrow\quad x_1 - 4 + 9 = 1 &&\Rightarrow\quad x_1 = -4
+\end{align*}
+
+Ответ: $(x_1, x_2, x_3) = (-4,\, -2,\, 3)$.
+
+## Ступенчатый вид
+### Свободные переменные
 
 $\left(\begin{array}{c c c c c|c}\boxed{1} & 2 & 0 & 0 & 0 & 1 \\ 0 & 0 & \boxed{1} & 5 & 0 & 2 \\ 0 & 0 & 0 & 0 & \boxed{1} & 3\end{array}\right)$
 
 Некоторые столбцы могут НЕ поймать ведущих элементов. Как, например, в приведенной расширенной матрице системы. Переменные, соответствующие этим столбцам, — **свободные переменные**. В данном случае свободные переменные: $x_2$, $x_4$.
  
-- Решение системы
+- Решение системы (тот же back substitution, но со свободными переменными)
 
 \begin{align*}
 1 \cdot x_5 &= 3 \quad \Rightarrow \quad x_5 = 3 \\
@@ -141,6 +165,78 @@ x =
 X = \begin{pmatrix}1 \\ 0 \\ 2 \\ 0 \\ 3\end{pmatrix} + x_2 \begin{pmatrix} -2 \\ 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} + x_4 \begin{pmatrix} 0 \\ 0 \\ -5 \\ 1 \\ 0 \end{pmatrix}, \quad x_2, x_4 \in \mathbb{R}
 \end{equation*}
 
-## Слайд для записи
+## Нулевые строки без свободных переменных
 
-## Примеры
+Возможен и другой случай: **не у каждой строки** есть ведущий элемент
+(есть нулевые строки), но **у каждого столбца** ведущий элемент есть ---
+свободных переменных нет.
+
+\begin{equation*}
+\left(\begin{array}{c c c|c}
+\boxed{1} & 2 & 1 & 4 \\
+0 & \boxed{1} & 1 & 1 \\
+0 & 0 & \boxed{2} & 2 \\
+0 & 0 & 0 & 0
+\end{array}\right)
+\end{equation*}
+
+Нулевая строка $0 = 0$ совместна и ничего не меняет.
+Back substitution даёт единственное решение:
+
+\begin{align*}
+2x_3 &= 2 &&\Rightarrow\quad x_3 = 1 \\
+x_2 + x_3 &= 1 &&\Rightarrow\quad x_2 = 0 \\
+x_1 + 2x_2 + x_3 &= 4 &&\Rightarrow\quad x_1 = 3
+\end{align*}
+
+Ответ: $(x_1, x_2, x_3) = (3,\, 0,\, 1)$.
+
+## Нулевые строки и свободные переменные
+
+А можно и всё сразу: есть нулевые строки **и** есть столбцы
+без ведущих элементов.
+
+\begin{equation*}
+\left(\begin{array}{c c c c|c}
+\boxed{1} & 2 & 0 & 3 & 1 \\
+0 & 0 & \boxed{1} & 1 & 2 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{array}\right)
+\end{equation*}
+
+Ведущие элементы в столбцах $1$ и $3$; свободные переменные:
+$x_2$, $x_4$. Нулевые строки совместны ($0=0$).
+
+\begin{align*}
+x_3 + x_4 &= 2 &&\Rightarrow\quad x_3 = 2 - x_4 \\
+x_1 + 2x_2 + 3x_4 &= 1 &&\Rightarrow\quad x_1 = 1 - 2x_2 - 3x_4
+\end{align*}
+
+Общее решение:
+\begin{equation*}
+X =
+\begin{pmatrix}1 \\ 0 \\ 2 \\ 0\end{pmatrix}
++ x_2 \begin{pmatrix}-2 \\ 1 \\ 0 \\ 0\end{pmatrix}
++ x_4 \begin{pmatrix}-3 \\ 0 \\ -1 \\ 1\end{pmatrix},
+\quad x_2, x_4 \in \mathbb{R}.
+\end{equation*}
+
+## Несовместная система
+
+Если после приведения к ступенчатому виду появляется строка вида
+$(0\ \cdots\ 0 \mid c)$ с $c \neq 0$, система называется **несовместной**.
+
+\begin{equation*}
+\left(\begin{array}{c c c|c}
+\boxed{1} & 2 & 1 & 3 \\
+0 & \boxed{1} & 1 & 1 \\
+0 & 0 & 0 & \boxed{5}
+\end{array}\right)
+\end{equation*}
+
+Последняя строка нас приведет к утверждению: $0 = 5$ --- противоречие, решений нет.
+
+Других «форм» несовместности после выполнения метода Гаусса нет:
+любое противоречие всегда сведется именно к такой композиции
+(нулевая левая часть, ненулевая правая).
